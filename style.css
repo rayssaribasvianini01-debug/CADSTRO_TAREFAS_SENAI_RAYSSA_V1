@@ -1,5 +1,4 @@
 /* Variaveis css - facilitar o uso de temas para formatação*/
-
 :root {
     --gradiente-fundo: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
     --fundo-cartao: #ffffff;
@@ -11,7 +10,6 @@
     --cor-concluido: #a0aec0;
 }
 
-/* modo escuro ativado via classe no body */
 body.modo-escuro {
     --gradiente-fundo: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
     --fundo-cartao: #1a202c;
@@ -51,13 +49,14 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
-
 }
 
 .cabecalio-aplicacao h1 {
     font-size: 1.5rem;
     font-weight: 700;
-
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .botao-icone {
@@ -85,11 +84,11 @@ input[type="text"] {
     color: var(--cor-texto);
 }
 
-input[type="text"]:focus{
+input[type="text"]:focus {
     border-color: var(--cor-primaria);
 }
 
-.botao-principal{
+.botao-principal {
     background: var(--cor-primaria);
     color: white;
     border: none;
@@ -98,20 +97,23 @@ input[type="text"]:focus{
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.1s, background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.botao-principal:hover{
+.botao-principal:hover {
     background: var(--cor-primaria-destaque);
     transform: translateY(-2px);
 }
 
-.lista-tarefas{
+.lista-tarefas {
     list-style: none;
     max-height: 280px;
     overflow-y: auto;
 }
 
-.item-tarefa{
+.item-tarefa {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -120,4 +122,55 @@ input[type="text"]:focus{
     border-radius: 10px;
     margin-bottom: 10px;
     animation: aparecer 0.3s ease;
+}
+
+.texto-tarefa {
+    flex: 1;
+    cursor: pointer;
+    word-break: break-all;
+    padding-right: 10px;
+}
+
+.item-tarefa.concluido .texto-tarefa {
+    text-decoration: line-through;
+    color: var(--cor-concluido);
+}
+
+.acoes-tarefa {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.botao-acao {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+    display: flex;
+    align-items: center;
+}
+
+.botao-acao.excluir:hover {
+    color: var(--cor-perigo);
+}
+
+.radape-aplicacao {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: var(--cor-concluido);
+    text-align: center;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
