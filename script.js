@@ -102,3 +102,4 @@ botaoTema.addEventListener("click", () => {
         icone.className = "fa-solid fa-moon";
     }
 });
+
