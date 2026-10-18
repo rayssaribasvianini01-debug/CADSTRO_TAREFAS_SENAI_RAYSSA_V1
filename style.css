@@ -1,20 +1,46 @@
 /* Variaveis css - facilitar o uso de temas para formatação*/
-:root {
-    --gradiente-fundo: url('foto.jpg');
-    --fundo-cartao: #f7ffad;
-    --cor-texto: #3d3d1a;
-    --cor-primaria: #3d3d24;
-    --cor-primaria-destaque: #22240e;
-    --cor-borda: #3d3d24;
-    --cor-perigo: #ff7675;
-    --cor-concluido: #a0aec0;
+   :root {
+    --gradiente-fundo: url('foto2.jpg');
+    --fundo-cartao: rgba(34, 27, 2, 0.918);
+    --cor-texto: #b8900e;
+    --cor-primaria: #b8900e;
+    --cor-primaria-destaque: #d8a80c;
+    --cor-borda: #50430d;
 }
 
 body.modo-escuro {
-    --gradiente-fundo: url('foto.jpg');
-    --fundo-cartao: #724d1d;
-    --cor-texto: #3d3d24;
-    --cor-borda: #22240e;
+    --gradiente-fundo: url('foto1.jpg');
+    --fundo-cartao: rgba(255, 224, 86, 0.644);
+    --cor-texto: #7c6916;
+    --cor-borda: #574e02;
+    --cor-primaria:#8b7202;
+    --cor-primaria-destaque:#4e3f01;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Quicksand', sans-serif;;
+    transition: background 0.3s, color 0.3s;
+}
+
+body {
+    background-image: url('foto1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+body.modo-escuro {
+    background-image: url('foto1.jpg');
 }
 .subtitulo-editorial {
   font-family: 'Bodoni Moda', serif;
@@ -58,7 +84,7 @@ body {
 }
 
 .cartao-aplicacao {
-    background: rgba(255, 250, 176, 0.85);
+    background: var(--fundo-cartao);
     color: var(--cor-texto);
     width: 100%;
     max-width: 420px;
@@ -271,6 +297,3 @@ input[type="text"]:focus {
   transform: scale(1.1);
   color: #9e8263;
 }
-
-
-
